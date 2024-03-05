@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Button from "../sharedComponents/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { formatDateToLocal } from "../../lib/utils";
+import { useEffect } from "react";
+import { getSponsors } from "../../redux/apiCalls/SponsersApi";
 
 const Table = () => {
   type Client = {
@@ -16,7 +18,10 @@ const Table = () => {
   const clients: Client[] = useSelector(
     (state: RootState) => state.home.home
   ).clients;
-
+const dispatch = useDispatch()
+  useEffect(() => {
+    getSponsors(dispatch);
+  }, [dispatch]);
   return (
     <div
       className="m-6 flow-root overflow-y-auto"

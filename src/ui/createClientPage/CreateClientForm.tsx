@@ -37,6 +37,7 @@ const CreateClientForm: React.FC = () => {
   );
   const navigate = useNavigate();
   const sponsorsArray: any = sponsors.sponsors;
+  console.log(sponsorsArray)
 
   // function to get an array of sponsers and IDs
   function sponsorIdAndName({ array }: { array: Sponsors[] }) {
