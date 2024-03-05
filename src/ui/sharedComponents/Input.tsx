@@ -2,7 +2,7 @@ interface InputProps {
     id: string;
     name: string
     label?: string;
-    required: boolean
+    required?: boolean
     autoComplete : string;
     value?: string;
     placeholder?: string;

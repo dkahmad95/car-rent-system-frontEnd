@@ -3,6 +3,8 @@ import Button from "../sharedComponents/Button";
 import Input from "../sharedComponents/Input";
 import Radio from "../sharedComponents/Radio";
 import { userRequest } from "../../lib/requestMethods";
+import { getAccounting } from "../../redux/apiCalls/AccountingApi";
+import { useDispatch } from "react-redux";
 
 interface FormProps {
   onClose: () => void;
@@ -24,7 +26,7 @@ const AccountingForm: React.FC<FormProps> = ({ onClose }) => {
   };
 
   console.log(formData);
-
+const dispatch = useDispatch()
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formDataToSend = new FormData();
@@ -35,6 +37,7 @@ const AccountingForm: React.FC<FormProps> = ({ onClose }) => {
     try {
       await userRequest.post("/addTransaction", formDataToSend);
       console.log("Form data:", formDataToSend);
+      await getAccounting(dispatch)
       onClose(); 
     } catch (error) {
       console.error("Error submitting form:", error);

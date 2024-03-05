@@ -102,7 +102,7 @@ const AddCarForm: React.FC<AddCarFormProps> = ({ onClose }) => {
           onChange={handleChange}
         />
         {/* buttons */}
-        <div className="flex justify-around lg:flex-row lg:w-1/2 lg:h-12">
+        <div className="flex justify-around   lg:h-12">
           <Button type="submit" className="bg-green-600 w-1/3">
             Add
           </Button>

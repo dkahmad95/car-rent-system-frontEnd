@@ -14,16 +14,18 @@ const ClientRentForm = () => {
 
   const cars: any = useSelector((state: RootState) => state.carData.carData);
   const carsArray = cars.carData;
-
-  // function to get an array of cars(name and models) and IDs
-  function carIdAndName({ array }: { array: CarData[] }) {
-    return array.map(({ id, name, model }) => ({
-      name: name + " " + model,
-      value: id,
-    }));
+  console.log(carsArray)
+  
+  function carIdAndNameAndNotRented({ array }: { array: CarData[] }): { name: string; value: number }[] {
+    return array
+      .filter(car => car.isRented === 0)
+      .map(({ id, name, model }) => ({
+        name: `${name} ${model}`,
+        value: id,
+      }));
   }
 
-  const carsOption = carIdAndName({ array: carsArray });
+  const carsOption = carIdAndNameAndNotRented({ array: carsArray });
   const [selectedCar, setSelectedCar] = useState("");
   const [formData, setFormData] = useState({
     start_date: "",
@@ -60,21 +62,17 @@ const ClientRentForm = () => {
       formDataToSend.append("video", formData.video);
     }
 
-    
     try {
       const response = await userRequest.post("/newRent", formDataToSend);
       if (response) {
         Navigate("/");
       } else if (!response) {
-        
         console.error("Failed to rent car");
       }
     } catch (error) {
-      
-      console.error("Error renting car:", error);
+      console.log("Error renting car:", error);
     }
   };
-  
 
   return (
     <div className="flex flex-col justify-center items-center py-8">

@@ -22,6 +22,7 @@ const ClientDetails = () => {
   const client: any = useSelector(
     (state: RootState) => state.clientDetails.clientDetails
   );
+
   const { clientDetails } = client;
   console.log(clientDetails);
   return (
@@ -46,6 +47,9 @@ const ClientDetails = () => {
             sponsor_name={clientDetails.sponsor_name}
             sponsor_number={clientDetails.sponsor_number}
             address={clientDetails.address}
+            renting_start_date={clientDetails.renting_start_date}
+            renting_end_date={clientDetails.renting_end_date}
+
           />
           <ClientDocs
             front_id_image={clientDetails.front_id_image}
