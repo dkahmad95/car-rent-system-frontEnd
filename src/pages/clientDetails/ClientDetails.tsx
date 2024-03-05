@@ -23,7 +23,8 @@ const ClientDetails = () => {
   const client: any = useSelector(
     (state: RootState) => state.clientDetails.clientDetails
   );
-  const { clientDetails } = client;
+   const { clientDetails } = client;
+  console.log(clientDetails);
   return (
     <div className="flex justify-center flex-col gap-y-6">
       {/* Client hero */}
@@ -31,7 +32,7 @@ const ClientDetails = () => {
         coverImage={clientForm}
         icon={cleintIcon}
         title="Client Details"
-        name={clientDetails.name}
+        name={clientDetails?.name}
       />
 
       {/* cleint info and form */}

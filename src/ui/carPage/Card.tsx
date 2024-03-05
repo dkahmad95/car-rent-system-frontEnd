@@ -4,15 +4,17 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getCarDetails } from "../../redux/apiCalls/CarDetaislsApi";
+import { useDispatch } from "react-redux";
 
 interface MediaCardProps {
-  carId:number;
+  carId: number;
   name: string;
   model: string;
   licence_plate_number: string;
   isRented: number;
-  image: string
+  image: string;
 }
 
 const MediaCard: React.FC<MediaCardProps> = ({
@@ -21,8 +23,10 @@ const MediaCard: React.FC<MediaCardProps> = ({
   licence_plate_number,
   isRented,
   image,
-  carId
+  carId,
 }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -42,12 +46,20 @@ const MediaCard: React.FC<MediaCardProps> = ({
           Plate: {licence_plate_number}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Status: {isRented > 0  ? "Rented" : "Not Rented"}
+          Status: {isRented > 0 ? "Rented" : "Not Rented"}
         </Typography>
       </CardContent>
       <CardActions>
         <Link to={`/carDetails/${carId}`}>
-          <Button size="small">Car Details</Button>
+          <Button
+            onClick={async () => {
+              await getCarDetails(dispatch, carId.toString()),
+                navigate("/carDetails/" + carId);
+            }}
+            size="small"
+          >
+            Car Details
+          </Button>
         </Link>
       </CardActions>
     </Card>

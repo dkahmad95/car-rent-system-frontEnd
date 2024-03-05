@@ -10,13 +10,15 @@ import { useEffect } from "react";
 import { getHome } from "../../redux/apiCalls/HomeApI";
 import { RootState } from "../../redux/store";
 import { TOKEN, userRequest } from "../../lib/requestMethods";
+import { getAllData } from "../../lib/utils";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    userRequest.defaults.headers.common["Authorization"] = `Bearer ${TOKEN()}`;
+    userRequest.defaults.headers.common["Authorization"] = `Bearer ${TOKEN()}`;// more more optimal request
     getHome(dispatch);
   }, [dispatch]);
+  getAllData()
 
   const home = useSelector((state: RootState) => state.home.home);
 

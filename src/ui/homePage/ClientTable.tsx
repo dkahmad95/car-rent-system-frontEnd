@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../sharedComponents/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { formatDateToLocal } from "../../lib/utils";
-import { useEffect } from "react";
-import { getSponsors } from "../../redux/apiCalls/SponsersApi";
+import { getClientDetails } from "../../redux/apiCalls/ClientDetailsApi";
 
 const Table = () => {
   type Client = {
@@ -18,10 +17,8 @@ const Table = () => {
   const clients: Client[] = useSelector(
     (state: RootState) => state.home.home
   ).clients;
-const dispatch = useDispatch()
-  useEffect(() => {
-    getSponsors(dispatch);
-  }, [dispatch]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <div
       className="m-6 flow-root overflow-y-auto"
@@ -59,9 +56,17 @@ const dispatch = useDispatch()
                     <p> {formatDateToLocal(client.created_at)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
-                    <Link to={`/clientDetails/${client.client_id}`}>
-                      <Button>More</Button>
-                    </Link>
+                    <Button
+                      onClick={async () => {
+                        await getClientDetails(
+                          dispatch,
+                          client.client_id.toString()
+                        );
+                        navigate("/clientDetails/" + client.client_id);
+                      }}
+                    >
+                      More Details
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -115,11 +120,17 @@ const dispatch = useDispatch()
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      {/* <UpdateInvoice id={invoice.id} />
-                      <DeleteInvoice id={invoice.id} /> */}
-                      <Link to={`/clientDetails/${client.client_id}`}>
-                        <Button>More Details</Button>
-                      </Link>
+                      <Button
+                        onClick={async () => {
+                          await getClientDetails(
+                            dispatch,
+                            client.client_id.toString()
+                          ),
+                          navigate("/clientDetails/" + client.client_id);
+                        }}
+                      >
+                        More Details
+                      </Button>
                     </div>
                   </td>
                 </tr>
