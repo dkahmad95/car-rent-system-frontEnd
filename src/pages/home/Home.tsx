@@ -8,7 +8,7 @@ const Home = () => {
         <div className="hidden my-6 h-[300px] w-[500px] lg:flex overflow-hidden ">
           <img
             className="object-cover rounded-3xl"
-            src="src\assets\carRentLogo.jpg"
+            src="public\assets\carRentLogo.jpg"
             alt=""
           />
         </div>

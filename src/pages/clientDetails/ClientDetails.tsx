@@ -4,8 +4,8 @@ import ClientDocs from "../../ui/clientDetailsPage/ClientDocs";
 import ClientInfo from "../../ui/clientDetailsPage/ClientInfo";
 import ClientRentForm from "../../ui/clientDetailsPage/ClientRentForm";
 
-import clientForm from "../../assets/cleintForm.jpg";
-import cleintIcon from "../../assets/cleintIcon.jpg";
+import clientForm from "../../../public/assets/cleintForm.jpg";
+import cleintIcon from "../../../public/assets/cleintIcon.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useLocation } from "react-router-dom";

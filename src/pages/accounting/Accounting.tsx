@@ -34,8 +34,8 @@ const Accounting = () => {
     <div className="m-6 flex flex-col justify-center">
       {/* accounting Hero */}
       <Hero
-        coverImage="src\assets\calculater.jpg"
-        icon="src\assets\income&expenseIcon.jpg"
+        coverImage="public\assets\calculater.jpg"
+        icon="public\assets\income&expenseIcon.jpg"
         title="Income & Expense"
       />
       {/* accountiong dashboard */}

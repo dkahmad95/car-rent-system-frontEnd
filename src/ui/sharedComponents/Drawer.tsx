@@ -15,7 +15,7 @@ const TemporaryDrawer: React.FC<TemporaryDrawerProps> = ({ open, onClose }) => {
   return (
     <div>
       <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
-        <img className="w-48 mb-10" src="src\assets\carRentLogo.jpg" alt="" />
+        <img className="w-48 mb-10" src="public\assets\carRentLogo.jpg" alt="" />
         <div className="flex justify-center items-center">
           <NavLinks />
         </div>

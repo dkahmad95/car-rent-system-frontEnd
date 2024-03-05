@@ -7,7 +7,7 @@ const LoginPage = () => {
       <div className=" flex justify-center items-center  w-80 h-64">
         <div className="w-80 h-64">
           .
-          <img src="src\assets\keys.png" alt="" />
+          <img src="public\assets\keys.png" alt="" />
         </div>
       </div>
 
