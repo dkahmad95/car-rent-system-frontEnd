@@ -4,8 +4,7 @@ import ClientDocs from "../../ui/clientDetailsPage/ClientDocs";
 import ClientInfo from "../../ui/clientDetailsPage/ClientInfo";
 import ClientRentForm from "../../ui/clientDetailsPage/ClientRentForm";
 
-import clientForm from "../../../public/assets/cleintForm.jpg";
-import cleintIcon from "../../../public/assets/cleintIcon.jpg";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useLocation } from "react-router-dom";
@@ -23,14 +22,16 @@ const ClientDetails = () => {
   const client: any = useSelector(
     (state: RootState) => state.clientDetails.clientDetails
   );
-   const { clientDetails } = client;
+  const { clientDetails } = client;
   console.log(clientDetails);
   return (
     <div className="flex justify-center flex-col gap-y-6">
       {/* Client hero */}
       <Hero
-        coverImage={clientForm}
-        icon={cleintIcon}
+        coverImage={
+          "https://i.pinimg.com/564x/d6/9b/51/d69b516c86555bac8f717587d1a41e2b.jpg"
+        }
+        icon={"https://i.pinimg.com/736x/5a/54/cf/5a54cfdb6320b05029b8fafb6fdb5f4e.jpg"}
         title="Client Details"
         name={clientDetails?.name}
       />

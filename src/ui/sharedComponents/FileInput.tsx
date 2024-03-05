@@ -20,7 +20,7 @@ const FileInput: React.FC<FileInputProps> = ({
   const handleClear = () => {
     setSelectedFile(null);
     onChange(null);
-    // Clear the file input value
+  
     const input = document.getElementById(id) as HTMLInputElement;
     if (input) {
       input.value = "";

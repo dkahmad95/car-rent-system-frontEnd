@@ -4,7 +4,7 @@ import {
   Cog6ToothIcon,
   UserCircleIcon,
   Bars3Icon,
-  PowerIcon, // Add the MenuIcon import
+  PowerIcon,
 } from "@heroicons/react/24/outline";
 
 import TemporaryDrawer from "./Drawer";
@@ -12,6 +12,7 @@ import { useState } from "react";
 import { logout } from "../../redux/userRedux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import BasicModal from "./Modal";
 
 const Header = () => {
   const navigat = useNavigate();
@@ -21,11 +22,12 @@ const Header = () => {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
+
+
+  const [open, setOpen] = useState(false);// for modal
   const handleLogout = () => {
-    
     dispatch(logout());
-    navigat("/login")
-    
+    navigat("/login");
   };
 
   return (
@@ -58,7 +60,17 @@ const Header = () => {
           <BellAlertIcon className="h-6 w-6" />
           <Cog6ToothIcon className="h-6 w-6" />
           <UserCircleIcon className="h-6 w-6" />
-          <PowerIcon className="h-6 w-6 cursor-pointer" onClick={handleLogout}/>
+          <BasicModal
+            open={open}
+            setOpen={setOpen}
+            handleClick={handleLogout}
+            Title={"Logout"}
+            Body={"Are you sure?"}
+          />
+          <PowerIcon
+            className="h-6 w-6 cursor-pointer"
+            onClick={()=>setOpen(true)}
+          />
         </div>
       </div>
       {/* Drawer */}
