@@ -41,7 +41,7 @@ const ClientInfo: React.FC<Props> = ({
           </div>
         </div>{" "}
         {hasRented && (
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-col justify-between">
             <span>
               <b>Start:</b> {formatDateToLocal(renting_start_date)}
             </span>
