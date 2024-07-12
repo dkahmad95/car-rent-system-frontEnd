@@ -12,19 +12,33 @@ import { useEffect } from "react";
 import { getClientDetails } from "../../redux/apiCalls/ClientDetailsApi";
 
 const ClientDetails = () => {
-  const dispatch = useDispatch();
-  const location = useLocation();
-  const clientId = location.pathname.split("/")[2];
-  useEffect(() => {
-    getClientDetails(dispatch, clientId);
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // const location = useLocation();
+  // const clientId = location.pathname.split("/")[2];
+  // useEffect(() => {
+  //   getClientDetails(dispatch, clientId);
+  // }, [dispatch]);
 
-  const client: any = useSelector(
-    (state: RootState) => state.clientDetails.clientDetails
-  );
+  // const client: any = useSelector(
+  //   (state: RootState) => state.clientDetails.clientDetails
+  // );
 
-  const { clientDetails } = client;
-  console.log(clientDetails);
+  // const { clientDetails } = client;
+  // console.log(clientDetails);
+
+  const clientDetails = {
+    name: "John Doe",
+    phone: "123-456-7890",
+    hasRented: true,
+    sponsor_name: "Jane Smith",
+    sponsor_number: "234-567-8901",
+    address: "123 Main St, Anytown, USA",
+    renting_start_date: "2023-06-01",
+    renting_end_date: "2023-12-01",
+    front_id_image: "https://i.pinimg.com/564x/08/05/4d/08054df84b6d41ba86670a5ac823bc8d.jpg",
+    back_id_image: "https://i.pinimg.com/564x/34/52/79/34527986ed9d6ecd78f68b224d99f69f.jpg",
+  };
+  
   return (
     <div className="flex justify-center flex-col gap-y-6">
       {/* Client hero */}

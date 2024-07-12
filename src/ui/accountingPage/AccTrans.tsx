@@ -11,7 +11,7 @@ interface AccTransProps {
 const AccTrans: React.FC<AccTransProps> = ({ transactions }) => {
   console.log("trans",transactions)
   return (
-    <div  className="overflow-y-auto" style={{ maxHeight: "50vh" }}>
+    <div  className="overflow-y-auto flex flex-col gap-y-6" style={{ maxHeight: "50vh" }}>
       {transactions.map((transaction, index) => (
         <AccountingDash
           key={index}

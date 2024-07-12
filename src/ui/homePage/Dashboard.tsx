@@ -13,15 +13,20 @@ import { TOKEN, userRequest } from "../../lib/requestMethods";
 import { getAllData } from "../../lib/utils";
 
 const Dashboard = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    userRequest.defaults.headers.common["Authorization"] = `Bearer ${TOKEN()}`;// more more optimal request
-    getHome(dispatch);
-  }, [dispatch]);
-  getAllData()
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   userRequest.defaults.headers.common["Authorization"] = `Bearer ${TOKEN()}`;// more more optimal request
+  //   getHome(dispatch);
+  // }, [dispatch]);
+  // getAllData()
 
-  const home = useSelector((state: RootState) => state.home.home);
-
+  // const home = useSelector((state: RootState) => state.home.home);
+  const home = {
+    clientsCount: 150,
+    carsCount: 45,
+    expenses: 12000,
+    income: 25000,
+  };
   return (
     <div className=" my-10 min-w-max">
       <div className="flex justify-center items-center flex-col gap-y-4 ">

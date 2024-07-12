@@ -7,12 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { RootState } from "../../redux/store";
 import { login } from "../../redux/apiCalls/LoginAPI";
+import { useNavigate } from "react-router-dom";
 
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+const navigate = useNavigate()
   const { isFetching, error } = useSelector(
     (state: RootState) => state.user
   );
@@ -33,7 +34,9 @@ const LoginForm = () => {
             Sign in to your account
           </h2>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6"
+        //  onSubmit={handleSubmit}
+         >
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="user" className="sr-only">
@@ -48,7 +51,7 @@ const LoginForm = () => {
                 autoComplete="text"
                 required={true}
                 placeholder="User Name"
-                onChange={(e) => setUsername(e.target.value)}
+                // onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div>
@@ -62,7 +65,7 @@ const LoginForm = () => {
                 autoComplete="current-password"
                 required={true}
                 placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
+                // onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
@@ -84,6 +87,7 @@ const LoginForm = () => {
             )}
           <div>
             <Button
+            onClick={()=>  navigate('/')}
               disabled={isFetching}
               className={isFetching ? 'cursor-not-allowed' : 'cursor-pointer'}
             >

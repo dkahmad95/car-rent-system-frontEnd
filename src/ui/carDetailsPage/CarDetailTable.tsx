@@ -19,10 +19,57 @@ const CarDetailsTable = () => {
     return ()=> {getCarDetailsClean}
   }, [dispatch]);
 
-  const carDetails: any[] = useSelector(
-    (state: RootState) => state.carDetails.carDetails
-  );
-
+  // const carDetails: any[] = useSelector(
+  //   (state: RootState) => state.carDetails.carDetails
+  // );
+  const carDetails = [
+    {
+      client_name: "John Doe",
+      client_number: "123-456-7890",
+      sponsor_name: "Jane Smith",
+      sponsor_number: "234-567-8901",
+      start_date: "2023-01-15",
+      end_date: "2023-02-15",
+      insurance_video: "video1",
+    },
+    {
+      client_name: "Alice Johnson",
+      client_number: "345-678-9012",
+      sponsor_name: "Bob Brown",
+      sponsor_number: "456-789-0123",
+      start_date: "2023-03-10",
+      end_date: "2023-04-10",
+      insurance_video: "video2",
+    },
+    {
+      client_name: "Charlie Davis",
+      client_number: "567-890-1234",
+      sponsor_name: "Dave Wilson",
+      sponsor_number: "678-901-2345",
+      start_date: "2023-05-01",
+      end_date: "2023-06-01",
+      insurance_video: "video3",
+    },
+    {
+      client_name: "Eve Martinez",
+      client_number: "789-012-3456",
+      sponsor_name: "Frank Thomas",
+      sponsor_number: "890-123-4567",
+      start_date: "2023-07-20",
+      end_date: "2023-08-20",
+      insurance_video: "video4",
+    },
+    {
+      client_name: "Grace Lee",
+      client_number: "901-234-5678",
+      sponsor_name: "Henry Clark",
+      sponsor_number: "012-345-6789",
+      start_date: "2023-09-10",
+      end_date: "2023-10-10",
+      insurance_video: "video5",
+    },
+  ];
+  
   return (
     <div className="m-6 flow-root">
       {carDetails.length === 0 ? (
@@ -116,7 +163,7 @@ const CarDetailsTable = () => {
                   </div>
                 </td>
                 <td className="whitespace-nowrap px-3 py-3">
-                  #
+                  #{car.client_number}
                 </td>
                 <td className="whitespace-nowrap px-3 py-3">
                   {car.sponsor_name}
@@ -132,9 +179,9 @@ const CarDetailsTable = () => {
                 </td>
                 <td className="whitespace-nowrap py-3 pl-6 pr-3">
                   <div className="flex justify-end gap-3">
-                  <Link to={`/${car.insurance_video}`}>
+                  {/* <Link to={`/${car.insurance_video}`}> */}
                       <Button>Video</Button>
-                    </Link>
+                    {/* </Link> */}
                   </div>
                 </td>
               </tr>

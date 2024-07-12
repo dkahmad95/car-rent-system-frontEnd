@@ -14,11 +14,54 @@ const Table = () => {
     rentingCount: number;
     rentingNow: boolean;
   };
-  const clients: Client[] = useSelector(
-    (state: RootState) => state.home.home
-  ).clients;
+  // const clients: Client[] = useSelector(
+  //   (state: RootState) => state.home.home
+  // ).clients;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const clients: Client[] = [
+    {
+      clientName: "John Doe",
+      clientNumber: "123-456-7890",
+      client_id: 1,
+      created_at: "2023-01-15T10:30:00Z",
+      rentingCount: 5,
+      rentingNow: true,
+    },
+    {
+      clientName: "Jane Smith",
+      clientNumber: "234-567-8901",
+      client_id: 2,
+      created_at: "2023-02-20T14:45:00Z",
+      rentingCount: 3,
+      rentingNow: false,
+    },
+    {
+      clientName: "Alice Johnson",
+      clientNumber: "345-678-9012",
+      client_id: 3,
+      created_at: "2023-03-10T08:00:00Z",
+      rentingCount: 8,
+      rentingNow: true,
+    },
+    {
+      clientName: "Bob Brown",
+      clientNumber: "456-789-0123",
+      client_id: 4,
+      created_at: "2023-04-25T16:20:00Z",
+      rentingCount: 2,
+      rentingNow: false,
+    },
+    {
+      clientName: "Charlie Davis",
+      clientNumber: "567-890-1234",
+      client_id: 5,
+      created_at: "2023-05-30T12:15:00Z",
+      rentingCount: 6,
+      rentingNow: true,
+    },
+  ];
+  
   return (
     <div
       className="m-6 flow-root overflow-y-auto"

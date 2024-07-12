@@ -24,9 +24,24 @@ const Accounting = () => {
     getAccounting(dispatch);
   }, [dispatch]);
 
-  const accountingData: AccountingData = useSelector(
-    (state: RootState) => state.acoounting.accounting
-  );
+  // const accountingData: AccountingData = useSelector(
+  //   (state: RootState) => state.acoounting.accounting
+  // );
+  const accountingData = {
+    revenue: 25,
+    income: 500,
+    outcome: 475,
+    transactions: [
+      { id: 1, trans_type: 0, trans_amount: 15, trans_desc: 'groceries' },
+      { id: 2, trans_type: 1, trans_amount: 20, trans_desc: 'dining' },
+      { id: 3, trans_type: 0, trans_amount: 50, trans_desc: 'salary' },
+      { id: 4, trans_type: 1, trans_amount: 10, trans_desc: 'coffee' },
+      { id: 5, trans_type: 0, trans_amount: 30, trans_desc: 'freelance' },
+      { id: 6, trans_type: 1, trans_amount: 25, trans_desc: 'utilities' },
+      { id: 7, trans_type: 0, trans_amount: 40, trans_desc: 'bonus' },
+      { id: 8, trans_type: 1, trans_amount: 35, trans_desc: 'entertainment' },
+      { id: 9, trans_type: 0, trans_amount: 100, trans_desc: 'project' },
+    ]}
   console.log("accountingData", accountingData);
 
   return (

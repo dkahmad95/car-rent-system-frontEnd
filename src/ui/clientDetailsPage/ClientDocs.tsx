@@ -13,11 +13,12 @@ const ClientDocs = ({ front_id_image, back_id_image }: Props) => {
           <img
             src={front_id_image  }
             alt="Front Id"
+             className="object-cover rounded-xl w-[250px] h-[200px]"
           />
         </div>
         {back_id_image && (
           <div className=" w-[250px] h-[200px] border flex justify-center items-center rounded-xl">
-            <img src={back_id_image} alt="Back Id" />
+            <img src={back_id_image} alt="Back Id"  className="object-cover w-[250px] h-[200px] rounded-xl" />
           </div>
         )}
       </div>

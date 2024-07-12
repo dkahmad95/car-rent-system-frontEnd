@@ -211,11 +211,7 @@ const CreateClientForm: React.FC = () => {
           </>
         )}
       </div>
-      {addClientError === false && (
-        <span className="my-2 text-red-500">
-          Error: Failed to add client. Please try again later.
-        </span>
-      )}
+    
       <Button type="submit" className="w-full">
         Add Client
       </Button>

@@ -12,17 +12,22 @@ import Layout from "./pages/Layout";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 function App() {
-  const { currentUser } = useSelector((state: RootState) => state.user);
+  // const { currentUser } = useSelector((state: RootState) => state.user);
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/login"
-          element={currentUser ? <Navigate to="/" /> : <LoginPage />}
+          element={
+            // currentUser ? <Navigate to="/" /> :
+             <LoginPage />}
         />
         <Route
           path="/"
-          element={!currentUser ? <Navigate to="/login" /> : <Layout />}
+          element={
+            // !currentUser ? 
+            // <Navigate to="/login" /> : 
+            <Layout />}
         >
           <Route index element={<Home />} />
           <Route path="/clientDetails/:id" element={<ClientDetails />} />
