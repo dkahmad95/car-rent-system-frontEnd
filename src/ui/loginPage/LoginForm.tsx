@@ -1,31 +1,31 @@
-import { FormEvent, useState } from "react";
+// import { FormEvent, useState } from "react";
 import Button from "../sharedComponents/Button";
 import Input from "../sharedComponents/Input";
 
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { RootState } from "../../redux/store";
-import { login } from "../../redux/apiCalls/LoginAPI";
+// import { login } from "../../redux/apiCalls/LoginAPI";
 import { useNavigate } from "react-router-dom";
 
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
 const navigate = useNavigate()
   const { isFetching, error } = useSelector(
     (state: RootState) => state.user
   );
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    login(dispatch, { username, password });
-    setUsername("");
-    setPassword("");
-  };
+  // const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  //   e.preventDefault();
+  //   login(dispatch, { username, password });
+  //   setUsername("");
+  //   setPassword("");
+  // };
   return (
     <div className=" flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">

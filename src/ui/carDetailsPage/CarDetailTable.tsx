@@ -1,10 +1,10 @@
 
 import Button from "../sharedComponents/Button";
 import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getCarDetails } from "../../redux/apiCalls/CarDetaislsApi";
-import { RootState } from "../../redux/store";
+// import { RootState } from "../../redux/store";
 import { formatDateToLocal } from "../../lib/utils";
 import { getCarDetailsClean } from "../../redux/carDetailsRedux";
 

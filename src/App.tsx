@@ -7,10 +7,10 @@ import Accounting from "./pages/accounting/Accounting";
 import CarDetails from "./pages/carDetails/CarDetails";
 
 import Home from "./pages/home/Home";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import { useSelector } from "react-redux";
-import { RootState } from "./redux/store";
+// import { useSelector } from "react-redux";
+// import { RootState } from "./redux/store";
 function App() {
   // const { currentUser } = useSelector((state: RootState) => state.user);
   return (

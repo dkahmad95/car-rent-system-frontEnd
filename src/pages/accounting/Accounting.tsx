@@ -4,10 +4,10 @@ import Hero from "../../ui/sharedComponents/Hero";
 import AccountingDash from "../../ui/accountingPage/AccountingDash";
 import AccountingForm from "../../ui/accountingPage/AccountingForm";
 import AccTrans from "../../ui/accountingPage/AccTrans";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAccounting } from "../../redux/apiCalls/AccountingApi";
-import { RootState } from "../../redux/store";
-import { AccountingData } from "../../redux/accountingRedux";
+// import { RootState } from "../../redux/store";
+// import { AccountingData } from "../../redux/accountingRedux";
 
 const Accounting = () => {
   const [newForm, setNewForm] = useState(false);
