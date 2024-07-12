@@ -5,11 +5,11 @@ import ClientInfo from "../../ui/clientDetailsPage/ClientInfo";
 import ClientRentForm from "../../ui/clientDetailsPage/ClientRentForm";
 
 
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { getClientDetails } from "../../redux/apiCalls/ClientDetailsApi";
+// import { useDispatch, useSelector } from "react-redux";
+// import { RootState } from "../../redux/store";
+// import { useLocation } from "react-router-dom";
+// import { useEffect } from "react";
+// import { getClientDetails } from "../../redux/apiCalls/ClientDetailsApi";
 
 const ClientDetails = () => {
   // const dispatch = useDispatch();
