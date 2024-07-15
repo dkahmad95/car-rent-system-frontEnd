@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../sharedComponents/Button";
 import Input from "../sharedComponents/Input";
 import Select from "../sharedComponents/Select";
-import { CarData } from "../../redux/carDataRedux";
 
 
 const ClientRentForm = () => {
