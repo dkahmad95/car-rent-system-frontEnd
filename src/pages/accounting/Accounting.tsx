@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../../ui/sharedComponents/Button";
 import Hero from "../../ui/sharedComponents/Hero";
 import AccountingDash from "../../ui/accountingPage/AccountingDash";
 import AccountingForm from "../../ui/accountingPage/AccountingForm";
 import AccTrans from "../../ui/accountingPage/AccTrans";
-import { useDispatch } from "react-redux";
-import { getAccounting } from "../../redux/apiCalls/AccountingApi";
-// import { RootState } from "../../redux/store";
-// import { AccountingData } from "../../redux/accountingRedux";
+
 
 const Accounting = () => {
   const [newForm, setNewForm] = useState(false);
@@ -18,15 +15,8 @@ const Accounting = () => {
     setNewForm(false);
   };
 
-  const dispatch = useDispatch();
+ 
 
-  useEffect(() => {
-    getAccounting(dispatch);
-  }, [dispatch]);
-
-  // const accountingData: AccountingData = useSelector(
-  //   (state: RootState) => state.acoounting.accounting
-  // );
   const accountingData = {
     revenue: 25,
     income: 500,

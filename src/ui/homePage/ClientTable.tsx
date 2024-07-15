@@ -1,9 +1,6 @@
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../sharedComponents/Button";
-import { useDispatch } from "react-redux";
-// import { RootState } from "../../redux/store";
 import { formatDateToLocal } from "../../lib/utils";
-import { getClientDetails } from "../../redux/apiCalls/ClientDetailsApi";
 
 const Table = () => {
   type Client = {
@@ -14,10 +11,7 @@ const Table = () => {
     rentingCount: number;
     rentingNow: boolean;
   };
-  // const clients: Client[] = useSelector(
-  //   (state: RootState) => state.home.home
-  // ).clients;
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const clients: Client[] = [
     {
@@ -61,10 +55,10 @@ const Table = () => {
       rentingNow: true,
     },
   ];
-  
+
   return (
     <div
-      className="m-6 flow-root overflow-y-auto"
+      className=" mt-6 w-full flow-root overflow-y-auto"
       style={{ maxHeight: "70vh" }}
     >
       <div className="inline-block min-w-full align-middle">
@@ -73,40 +67,40 @@ const Table = () => {
             {clients?.map((client) => (
               <div
                 key={client.client_id}
-                className="mb-2 w-full rounded-md bg-white p-4"
+                className="mb-2 w-full rounded-md bg-white p-4 border-t-blue-500 border-2"
               >
                 <div className="flex items-center justify-between border-b pb-4">
-                  <div>
-                    <div className="mb-2 flex items-center">
+               
+                    <div className="mb-2 flex flex-col items-start justify-center">
                       <p>
                         Name: <b>{client.clientName}</b>
                       </p>
+                      <p className="text-sm text-gray-500">
+                        Phone:<b> {client.clientNumber}</b>
+                      </p>{" "}
+                      <p className="text-sm text-gray-500">
+                        Renting Count: <b>{client.rentingCount}</b>
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-500">
-                      Phone:<b> {client.clientNumber}</b>
-                    </p>
-                  </div>
-
-                  <p className="text-sm text-gray-500">
-                    Renting Count: <b>{client.rentingCount}</b>
-                  </p>
+                
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
                   <div>
                     <p className="text-sm font-medium">
-                      <b>{client.rentingNow ? "Renting" : "Not Renting"}</b>
+                      Status: <b>{client.rentingNow ? "Renting" : "Not Renting"}</b>
                     </p>
                     <p> {formatDateToLocal(client.created_at)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
                     <Button
                       onClick={async () => {
-                        await getClientDetails(
-                          dispatch,
-                          client.client_id.toString()
-                        );
+                        // await getClientDetails(
+                        //   dispatch,
+                        //   client.client_id.toString()
+                        // );
                         navigate("/clientDetails/" + client.client_id);
                       }}
+                      className="text-xs "
                     >
                       More Details
                     </Button>
@@ -115,6 +109,7 @@ const Table = () => {
               </div>
             ))}
           </div>
+          {/* //larhe screen table */}
           <table className="hidden min-w-full text-gray-900 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
@@ -165,10 +160,10 @@ const Table = () => {
                     <div className="flex justify-end gap-3">
                       <Button
                         onClick={async () => {
-                          await getClientDetails(
-                            dispatch,
-                            client.client_id.toString()
-                          ),
+                          // await getClientDetails(
+                          //   dispatch,
+                          //   client.client_id.toString()
+                          // ),
                           navigate("/clientDetails/" + client.client_id);
                         }}
                       >

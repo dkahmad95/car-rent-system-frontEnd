@@ -1,31 +1,14 @@
-// import { FormEvent, useState } from "react";
+
 import Button from "../sharedComponents/Button";
 import Input from "../sharedComponents/Input";
-
-
-import { useSelector } from "react-redux";
-
-import { RootState } from "../../redux/store";
-// import { login } from "../../redux/apiCalls/LoginAPI";
 import { useNavigate } from "react-router-dom";
 
 
 const LoginForm = () => {
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
+
 const navigate = useNavigate()
-  const { isFetching, error } = useSelector(
-    (state: RootState) => state.user
-  );
 
-  // const dispatch = useDispatch();
 
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-  //   e.preventDefault();
-  //   login(dispatch, { username, password });
-  //   setUsername("");
-  //   setPassword("");
-  // };
   return (
     <div className=" flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -35,7 +18,7 @@ const navigate = useNavigate()
           </h2>
         </div>
         <form className="mt-8 space-y-6"
-        //  onSubmit={handleSubmit}
+      
          >
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
@@ -51,7 +34,7 @@ const navigate = useNavigate()
                 autoComplete="text"
                 required={true}
                 placeholder="User Name"
-                // onChange={(e) => setUsername(e.target.value)}
+               
               />
             </div>
             <div>
@@ -65,7 +48,6 @@ const navigate = useNavigate()
                 autoComplete="current-password"
                 required={true}
                 placeholder="Password"
-                // onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
@@ -82,14 +64,11 @@ const navigate = useNavigate()
             </div>
           </div>
 
-            {error ===true  && (
-              <span className="text-red-500 ">Wrong User Name Or Password!</span>
-            )}
+          
           <div>
             <Button
             onClick={()=>  navigate('/')}
-              disabled={isFetching}
-              className={isFetching ? 'cursor-not-allowed' : 'cursor-pointer'}
+             
             >
               Continue
             </Button>

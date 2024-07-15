@@ -5,26 +5,8 @@ import ClientInfo from "../../ui/clientDetailsPage/ClientInfo";
 import ClientRentForm from "../../ui/clientDetailsPage/ClientRentForm";
 
 
-// import { useDispatch, useSelector } from "react-redux";
-// import { RootState } from "../../redux/store";
-// import { useLocation } from "react-router-dom";
-// import { useEffect } from "react";
-// import { getClientDetails } from "../../redux/apiCalls/ClientDetailsApi";
-
 const ClientDetails = () => {
-  // const dispatch = useDispatch();
-  // const location = useLocation();
-  // const clientId = location.pathname.split("/")[2];
-  // useEffect(() => {
-  //   getClientDetails(dispatch, clientId);
-  // }, [dispatch]);
-
-  // const client: any = useSelector(
-  //   (state: RootState) => state.clientDetails.clientDetails
-  // );
-
-  // const { clientDetails } = client;
-  // console.log(clientDetails);
+  
 
   const clientDetails = {
     name: "John Doe",
@@ -54,7 +36,7 @@ const ClientDetails = () => {
       {/* cleint info and form */}
       <div className="flex justify-center flex-col  lg:flex lg:flex-row lg:justify-between ">
         {/* client Info */}
-        <div className="lg:w-1/2 mb-6 flex flex-col gap-8 lg:gap-16">
+        <div className="lg:w-1/2 mb-6 flex flex-col gap-8 lg:gap-16 0">
           <ClientInfo
             phone={clientDetails.phone}
             hasRented={clientDetails.hasRented}

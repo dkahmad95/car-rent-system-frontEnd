@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Button from "../../ui/sharedComponents/Button";
 import AddCarForm from "../../ui/carPage/AddCarForm";
 import MediaCard from "../../ui/carPage/Card";
-import { useDispatch } from "react-redux";
-import { getCarData } from "../../redux/apiCalls/CarDataApi";
-// import { RootState } from "../../redux/store";
 
 const Cars = () => {
   const [carForm, setCarForm] = useState(false);
@@ -14,12 +11,6 @@ const Cars = () => {
   const handleClose = () => {
     setCarForm(false);
   };
-  const dispatch = useDispatch();
-  useEffect(() => {
-    getCarData(dispatch);
-  }, [dispatch]);
-
-  // const carData: any = useSelector((state: RootState) => state.carData.carData);
   
   const carData = [
     {

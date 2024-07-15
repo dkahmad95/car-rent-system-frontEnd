@@ -5,8 +5,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link, useNavigate } from "react-router-dom";
-import { getCarDetails } from "../../redux/apiCalls/CarDetaislsApi";
-import { useDispatch } from "react-redux";
 
 interface MediaCardProps {
   carId: number;
@@ -25,7 +23,7 @@ const MediaCard: React.FC<MediaCardProps> = ({
   image,
   carId,
 }) => {
-  const dispatch = useDispatch();
+ 
   const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -53,7 +51,7 @@ const MediaCard: React.FC<MediaCardProps> = ({
         <Link to={`/carDetails/${carId}`}>
           <Button
             onClick={async () => {
-              await getCarDetails(dispatch, carId.toString()),
+             
                 navigate("/carDetails/" + carId);
             }}
             size="small"

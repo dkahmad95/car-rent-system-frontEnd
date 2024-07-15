@@ -16,8 +16,8 @@ const Home = () => {
           <Dashboard />
         </div>
       </div>
-      <div className="w-full mb-10 lg:m-15 ">
-        <span className="text-2xl">Clients:</span>
+      <div className="w-full mb-10 lg:m-15 flex flex-col">
+        <span className="text-2xl font-bold text-blue-500 ">Clients:</span>
         <DataTable />
       </div>
      

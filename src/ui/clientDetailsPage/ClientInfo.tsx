@@ -21,19 +21,19 @@ const ClientInfo: React.FC<Props> = ({
   renting_end_date,
 }) => {
   return (
-    <div className="flex justify-center items-center flex-col mx-12">
-      <div className="w-[300px]">
+    <div className="flex justify-center items-center flex-col w-full   ">
+      <div className="w-[400px] flex flex-col gap-3 p-4 border-2 rounded-xl">
         {/* phone and status */}
-        <div className="flex justify-between items-center flex-row mb-4">
+        <div className="flex flex-row justify-between items-center ">
           {/* phone */}
-          <div className="flex flex-col">
+          <div className="flex flex-row gap-2">
             <span>
-              <b>Phone</b>
+              <b>Phone:</b>
             </span>
             <span>{phone}</span>
           </div>
           {/* status */}
-          <div className="flex flex-col">
+          <div className="flex flex-row gap-2">
             <span>
               <b>Renting?</b>
             </span>
@@ -41,7 +41,7 @@ const ClientInfo: React.FC<Props> = ({
           </div>
         </div>{" "}
         {hasRented && (
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-row justify-between border-t gap-2">
             <span>
               <b>Start:</b> {formatDateToLocal(renting_start_date)}
             </span>
@@ -51,7 +51,7 @@ const ClientInfo: React.FC<Props> = ({
           </div>
         )}
         {/* sponsord Info */}
-        <div className="flex justify-between flex-row my-4">
+        <div className="flex justify-between flex-row  border-t">
           {/* has sponsor */}
           <div className="flex flex-col">
             <span>
@@ -64,14 +64,14 @@ const ClientInfo: React.FC<Props> = ({
               {/* sponsor name */}
               <div className="flex flex-col">
                 <span>
-                  <b>Name</b>
+                  <b>Name:</b>
                 </span>
                 <span>{sponsor_name}</span>
               </div>
               {/* sponsor number */}
               <div className="flex flex-col">
                 <span>
-                  <b>Number</b>
+                  <b>Number:</b>
                 </span>
                 <span>{sponsor_number}</span>
               </div>
@@ -79,7 +79,7 @@ const ClientInfo: React.FC<Props> = ({
           )}
         </div>
         {/* address */}
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center border-t">
           <span>
             <b>Address</b>
           </span>

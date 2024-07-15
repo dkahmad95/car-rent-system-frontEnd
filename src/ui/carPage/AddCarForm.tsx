@@ -2,7 +2,6 @@ import React, { FormEvent, useState } from "react"; // Import FormEvent and useS
 import Button from "../sharedComponents/Button";
 import FileInput from "../sharedComponents/FileInput";
 import Input from "../sharedComponents/Input";
-import { userRequest } from "../../lib/requestMethods";
 
 interface AddCarFormProps {
   onClose: () => void;
@@ -50,7 +49,7 @@ const AddCarForm: React.FC<AddCarFormProps> = ({ onClose }) => {
       }
     });
     try {
-      await userRequest.post('/addCar',formDataToSend)
+      console.log(formDataToSend)
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -103,10 +102,10 @@ const AddCarForm: React.FC<AddCarFormProps> = ({ onClose }) => {
         />
         {/* buttons */}
         <div className="flex justify-around   lg:h-12">
-          <Button type="submit" className="bg-green-600 w-1/3">
+          <Button type="submit" className="bg-blue-500 w-1/3">
             Add
           </Button>
-          <Button className="bg-red-600 w-1/3" onClick={onClose}>
+          <Button className="bg-red-500 w-1/3" onClick={onClose}>
             Abort
           </Button>
         </div>
