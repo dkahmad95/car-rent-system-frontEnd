@@ -53,7 +53,7 @@ const ClientDetails = () => {
           />
         </div>
         {/* client rent form */}
-        <div className="lg:w-1/2">
+        <div className="lg:w-1/2 mb-6">
           <ClientRentForm />
         </div>
       </div>
