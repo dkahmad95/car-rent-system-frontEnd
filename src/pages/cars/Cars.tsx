@@ -96,7 +96,7 @@ const Cars = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center m-6">
+    <div className="flex flex-col items-center ">
       <Button className="mb-8" onClick={handleCarForm}>
         Add New Car
       </Button>

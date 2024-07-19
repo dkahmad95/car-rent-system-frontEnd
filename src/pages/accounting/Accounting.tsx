@@ -32,10 +32,9 @@ const Accounting = () => {
       { id: 8, trans_type: 1, trans_amount: 35, trans_desc: 'entertainment' },
       { id: 9, trans_type: 0, trans_amount: 100, trans_desc: 'project' },
     ]}
-  console.log("accountingData", accountingData);
 
   return (
-    <div className="m-6 flex flex-col justify-center">
+    <div className="flex flex-col justify-center">
       {/* accounting Hero */}
       <Hero
         coverImage="https://i.pinimg.com/564x/04/fd/cf/04fdcfa3e1c7e7461e536a0a2e9fdb4d.jpg"

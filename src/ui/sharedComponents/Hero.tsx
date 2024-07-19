@@ -18,7 +18,7 @@ const Hero: React.FC<heroProps> = ({ coverImage, icon, title, name }) => {
             className="w-full h-64 lg:max-w-3xl object-cover rounded-lg lg:rounded-t-lg"
           />
           {/* client Icon */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
             <img
               src={icon}
               alt="icon"

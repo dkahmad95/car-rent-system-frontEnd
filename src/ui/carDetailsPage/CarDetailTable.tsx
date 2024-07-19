@@ -51,7 +51,7 @@ const CarDetailsTable = () => {
   ];
 
   return (
-    <div className="m-6 flow-root">
+    <div className=" h-[500px] flow-root">
       {carDetails.length === 0 ? (
         <div className="flex justify-center items-center h-40">
           <p className="text-lg font-bold text-gray-500">No details to show</p>
