@@ -153,10 +153,10 @@ const CreateClientForm: React.FC = () => {
 
 
   return (
-    <form onSubmit={handleFormSubmit} className="mx-8 mb-8 border-2 p-2 flex flex-col gap-6" >
+    <form onSubmit={handleFormSubmit} className=" mb-8 border-2 p-2 flex flex-col gap-6 " >
       {/* client Info input */}
      
-      <div className="p-2">
+      <div className="">
         <Input
           id="client-name"
           name="name"
