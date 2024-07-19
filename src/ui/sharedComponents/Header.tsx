@@ -42,8 +42,14 @@ const Header = () => {
           </button>
         </div>
 
+        {/* Logo */}
+
+        <div className="">
+          <h1 className=" text-lg md:text-3xl font-bold "><span className=" text-blue-500">Dekmak's</span> Rents.</h1>
+        </div>
+
         {/* Search Bar */}
-        <div className="flex-1 flex items-center justify-center ">
+        {/* <div className="flex-1 flex items-center justify-center ">
           <Input
             id="search"
             name="search"
@@ -51,9 +57,9 @@ const Header = () => {
             autoComplete="search"
             required={true}
             placeholder="Search"
-            className="w-full  h-10 px-3 rounded-none   border-gray-500 "
+            className="w-full h-10 px-3 rounded-none text-center  "
           />
-        </div>
+        </div> */}
 
         {/* Icons */}
         <div className="flex items-center gap-2">

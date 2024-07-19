@@ -156,7 +156,7 @@ const CreateClientForm: React.FC = () => {
     <form onSubmit={handleFormSubmit} className="mx-8 mb-8 border-2 p-2 flex flex-col gap-6" >
       {/* client Info input */}
      
-      <div>
+      <div className="p-2">
         <Input
           id="client-name"
           name="name"
@@ -193,7 +193,7 @@ const CreateClientForm: React.FC = () => {
       </div>
       {/* Docs Input */}
     
-      <div>
+      <div className="p-2">
         <FileInput
           id="front-id"
           name="front_id_image"
@@ -212,7 +212,7 @@ const CreateClientForm: React.FC = () => {
 
       {/* sponsor details */}
    
-      <div className="mb-8">
+      <div className="mb-8 p-2">
         <Radio
           id="sponsorStatus"
           name="sponsor_status"
@@ -263,7 +263,7 @@ const CreateClientForm: React.FC = () => {
         )}
       </div>
     
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full p-2">
         Add Client
       </Button>
     </form>

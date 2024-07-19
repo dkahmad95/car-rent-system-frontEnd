@@ -21,8 +21,8 @@ const ClientInfo: React.FC<Props> = ({
   renting_end_date,
 }) => {
   return (
-    <div className="flex justify-center items-center flex-col w-full   ">
-      <div className="w-[400px] flex flex-col gap-3 p-4 border-2 rounded-xl">
+    <div className="flex justify-center items-center flex-col p-4   ">
+      <div className="w-[350px] flex flex-col gap-3 p-4 border-2 rounded-xl ">
         {/* phone and status */}
         <div className="flex flex-row justify-between items-center ">
           {/* phone */}
