@@ -7,7 +7,7 @@ import Accounting from "./pages/accounting/Accounting";
 import CarDetails from "./pages/carDetails/CarDetails";
 
 import Home from "./pages/home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 // import { useSelector } from "react-redux";
 // import { RootState } from "./redux/store";
